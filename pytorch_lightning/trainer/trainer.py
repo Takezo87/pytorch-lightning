@@ -1072,7 +1072,7 @@ class Trainer(
         elif self.use_horovod:
             results = self.horovod_train(model)
 
-        elif self.single_gpu:
+        elif self.use_single_gpu:
             self.accelerator = GPUAccelerator(self)
             self.accelerator.setup(model)
             results = self.run_pretrain_routine(model)
